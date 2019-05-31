@@ -1,16 +1,16 @@
 let options = ['Pirmas', 'Antras', 'Trecias', 'Ketvirtas', 'Penktas', 'Sestas', 'septintas', 'astuntas'];
 let colors = ['#fff', '#000', '#fff', '#000'];
 let slices = options.length;
-let sliceDeg = 360/slices;
+let sliceDeg = 360 / slices;
 let deg = 0;
 let width = canvas.width;
 let ctx = canvas.getContext('2d');
-let center = width/2;
+let center = width / 2;
 let spinDeg = 0;
 let mouseClicks = 0;
-let spinTime = 99;
-let spinDegCalc = 699999;
-const deg2rad = (deg) => deg * Math.PI/180;
+let spinTime = 90;
+let spinDegCalc = 890000;
+const deg2rad = (deg) => deg * Math.PI / 180;
 const canvasWheel = document.querySelector('canvas');
 
 const drawSlice = (degg, color) => {
@@ -34,16 +34,15 @@ const drawText = (deggg, text) => {
 }
 
 let drawWheel = (inpDeg) => {
-    for(let i = 0; i < slices; i++){
-        if (i >= 4){
-            drawSlice(inpDeg, colors[i-4]);
-            drawText(inpDeg + sliceDeg/2, options[i]);
+    for (let i = 0; i < slices; i++) {
+        if (i >= 4) {
+            drawSlice(inpDeg, colors[i - 4]);
+            drawText(inpDeg + sliceDeg / 2, options[i]);
             inpDeg += sliceDeg;
 
-        }
-        else{
+        } else {
             drawSlice(inpDeg, colors[i]);
-            drawText(inpDeg + sliceDeg/2, options[i]);
+            drawText(inpDeg + sliceDeg / 2, options[i]);
             inpDeg += sliceDeg;
 
         }
